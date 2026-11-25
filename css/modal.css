@@ -11,7 +11,7 @@
    pointer-events: none;
 
    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-   transition-property: opacity;
+   transition-property: opacity, visibility, pointer-events;
 }
 
 .backdrop.is-open {
@@ -70,7 +70,8 @@
     background-color: #404bbf;
 }
 
-.btn-modal:hover > .modal-close-icon {
+.btn-modal:hover > .modal-close-icon,
+.btn-modal:focus > .modal-close-icon, {
     color: white;
 }
 
@@ -94,7 +95,6 @@
 }
 
 .modal-form-field {
-    margin-bottom: 8px;
 
 }
 
@@ -134,9 +134,7 @@
 .modal-icon {
   position: absolute;
   top: calc(50% + 2px);
-  left: 12px;
-  width: 12px;
-  height: 12px;
+  left: 16px;
   transform: translateY(-50%);
   color: #2e2f42;
   pointer-events: none;
@@ -147,12 +145,17 @@
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     padding: 8px 16px;
-    width: 360px;
     height: 120px;
     outline: transparent;
     resize: none;
     width: 100%;
     margin-top: 4px;
+    font-weight: 400px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);  ;
 }
 
 .modal-comment::placeholder {
@@ -160,7 +163,6 @@
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
     font-size: 12px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-comment:focus {
@@ -168,7 +170,7 @@
 }
 
 .modal-form-box {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
     margin-top: 16px;
 }
 
@@ -195,15 +197,20 @@ font-size: 12px;
     border: 0.88px solid rgba(46, 47, 66, 0.4);
     cursor: pointer;
     outline: none;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: border, background-color;
 }
 
 .checkbox:checked + .modal-form-policy > .modal-form-checkbox {
     background-color: #404bbf;
     border: 1px solid #404bbf;
-    opacity: 1;
     
 }
+
+.checkbox:checked + .modal-form-policy .modal-form-checkicon {
+  opacity: 1;
+}
+
 
 .modal-form-checkicon {
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -211,6 +218,8 @@ font-size: 12px;
     opacity: 0;
 
 }
+
+
 
 
 .modal-form-link {
@@ -226,4 +235,13 @@ form .btn[type="submit"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 169px;
+   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition-property: box-shadow, background-color;
+}
+
+form .btn[type="submit"]:hover,
+form .btn[type="submit"]:focus {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: #404bbf;
 }
