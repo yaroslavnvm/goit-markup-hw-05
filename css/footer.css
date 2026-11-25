@@ -86,6 +86,11 @@
   margin-bottom: 16px;
   font-weight: 500;
   color: #ffffff;
+font-weight: 500;
+font-size: 16px; 
+line-height: 1.5;
+letter-spacing: 0.02em;
+color: #fff;
 }
 
 .input-button {
@@ -161,4 +166,5 @@ transition-property: background-color;
 
 .footer-subscribe {
   margin-left: 83px; 
+  margin-right: 534px;
 }
